@@ -1,0 +1,378 @@
+*{
+    margin:0; 
+    padding:0;
+}
+body{
+    width: 1480px;
+    margin: 0px auto;
+    background-color: #f5f9ff;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+/* .qj 区块 */
+.qj{
+    background-color: #effbed;
+    width: 1480px;
+}
+
+/* 顶部logo与搜索栏整体布局 */
+.top{
+    height:80px;
+    background-color: #dff7dc;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.top img{
+    height: 95px;
+    width: 170px;
+    margin-top: -5px;
+}
+
+/* 搜索栏 */
+#ss {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+}
+#ss input[type="text"] {  
+    width: 400px;
+    height: 35px;
+    padding: 0 15px;  
+    font-size: 16px;  
+    border: 1px solid #ccc;  
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}  
+#ss button {  
+    width: 80px;
+    height: 37px;  
+    font-size: 16px;  
+    border: 1px solid #ccc;  
+    background-color: #4CAF50;  
+    color: white;  
+    border-radius: 0 20px 20px 0; 
+    cursor: pointer;  
+    transition: background-color 0.3s;
+}  
+#ss button:hover {  
+    background-color: #45a049;
+}
+
+/* 登录按钮 */
+#dl {
+    margin-left: auto;
+}
+#dl a{
+    width: 120px;
+    height: 35px;
+    border-radius: 20px;
+    color: white;   
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    transition: background-color 0.3s;
+}
+#dl a:hover {  
+    background-color: #45a049;
+}
+
+/* 导航条 */
+.dht{
+    background-color: #b6dab2;
+    width: 1480px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.dht a{
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    font-family: "微软雅黑";
+    display: block;
+    width: 130px;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s; 
+    margin: 0 5px;
+    border-radius: 5px;
+}
+#a3{
+    margin-left: 0;
+}
+#a4{
+    background-color: #ffccd5;
+    font-weight: bold;
+}
+.dht a:hover {  
+    background-color: #a8d8ea;  
+    transform: translateY(-3px);  
+}
+
+/* 排行榜主容器 */
+.phb{
+    min-height: 1200px;
+    padding: 30px 20px;
+    display: flex;
+    gap: 30px;
+}
+
+/* 左侧榜单盒子 */
+.left{
+    width: 480px;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.left h1{
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+
+/* 可选：榜单内容容器 */
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+.chart {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.3s;
+    border: 1px solid #e0e0e0;
+}
+.chart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+.chart-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.chart-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #4CAF50;
+}
+.chart-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+.chart-songs {
+    list-style: none;
+}
+.chart-song {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+.chart-song:hover {
+    background-color: #f0f7ff;
+}
+.chart-song:last-child {
+    border-bottom: none;
+}
+.song-info {
+    display: flex;
+    align-items: center;
+}
+.song-rank {
+    width: 24px;
+    height: 24px;
+    background: #4CAF50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.song-name {
+    font-size: 15px;
+    font-weight: 500;
+}
+.song-artist {
+    font-size: 13px;
+    color: #777;
+}
+
+/* 右侧榜单盒子 */
+.right{
+    flex: 1;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.right h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+}
+.ranking-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 10px;
+    border-bottom: 2px solid #4CAF50;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+.ranking-list {
+    list-style: none;
+}
+.ranking-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    transition: all 0.3s;
+    animation: fadeIn 0.5s ease-out;
+    border: 1px solid #eee;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.ranking-item:hover {
+    background: #f0f7ff;
+    transform: translateX(5px);
+}
+.item-rank {
+    font-size: 24px;
+    font-weight: bold;
+    width: 40px;
+    text-align: center;
+    color: #4CAF50;
+}
+.rank-1 { color: gold; }
+.rank-2 { color: silver; }
+.rank-3 { color: #cd7f32; }
+.item-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin: 0 20px;
+    border: 2px solid #4CAF50;
+}
+.item-details {
+    flex-grow: 1;
+}
+.item-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+.item-artist {
+    font-size: 14px;
+    color: #777;
+}
+.item-score {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: right;
+    color: #ff6b6b;
+}
+.vote-count {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #4CAF50;
+}
+.item-vote {
+    background: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: all 0.3s;
+}
+.item-vote:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+.move-up {
+    animation: moveUp 0.5s ease-out;
+}
+.move-down {
+    animation: moveDown 0.5s ease-out;
+}
+@keyframes moveUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+@keyframes moveDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* 页脚 */
+.foot{
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* 投票通知 */
+.vote-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    animation: slideIn 0.5s, fadeOut 0.5s 2.5s;
+}
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC DOG - 音乐排行榜</title>
+    <link rel="stylesheet" href="css/ren.css">
+</head>
+<body>
+    <div class="qj">
+        <div class="top">
+            <img src="img/logo 许治珍.png" alt="MUSIC DOG Logo">
+            <div id="ss">
+                <form action="/search" method="get">
+                    <input type="text" name="query" placeholder="请输入搜索关键字" required>
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+            <div id="dl">
+                <a href="login.html">
+                    <p>登录 | 注册</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="dht">
+            <a href="index.html" id="a3">首页</a>
+            <a href="ren.html" id="a4">歌手</a>
+            <a href="classes.html">分类歌单</a>
+            <a href="books.html">听书精选</a>
+            <a href="paihang.html" >排行榜</a>
+            <a href="zhuanji.html">专辑</a>
+            <a href="vip.html">Vip会员</a>
+            <a href="goods.html">商城</a>
+        </div>
+        
+			<div class="quanbu">
+				<div class="d1">
+					<button onclick="showAllSingers()">全部</button>
+					<p onclick="filterByLetter('A')">A</p>
+					<p onclick="filterByLetter('B')">B</p>
+					<p onclick="filterByLetter('C')">C</p>
+					<p onclick="filterByLetter('D')">D</p>
+					<p onclick="filterByLetter('E')">E</p>
+					<p onclick="filterByLetter('F')">F</p>
+					<p onclick="filterByLetter('G')">G</p>
+					<p onclick="filterByLetter('H')">H</p>
+					<p onclick="filterByLetter('I')">I</p>
+					<p onclick="filterByLetter('J')">J</p>
+					<p onclick="filterByLetter('K')">K</p>
+					<p onclick="filterByLetter('L')">L</p>
+					<p onclick="filterByLetter('M')">M</p>
+					<p onclick="filterByLetter('N')">N</p>
+					<p onclick="filterByLetter('O')">O</p>
+					<p onclick="filterByLetter('P')">P</p>
+					<p onclick="filterByLetter('Q')">Q</p>
+					<p onclick="filterByLetter('R')">R</p>
+					<p onclick="filterByLetter('S')">S</p>
+					<p onclick="filterByLetter('T')">T</p>
+					<p onclick="filterByLetter('U')">U</p>
+					<p onclick="filterByLetter('V')">V</p>
+					<p onclick="filterByLetter('W')">W</p>
+					<p onclick="filterByLetter('X')">X</p>
+					<p onclick="filterByLetter('Y')">Y</p>
+					<p onclick="filterByLetter('Z')">Z</p>
+				</div>
+
+				<div class="d2">
+					<button>全部</button>
+					<p>内地</p>
+					<p>港台</p>
+					<p>欧美</p>
+					<p>日韩</p>
+				</div>
+
+				<div class="d3">
+					<button>全部</button>
+					<p>流行</p>
+					<p>说唱</p>
+					<p>国风</p>
+					<p>摇滚</p>
+					<p>古典</p>
+					<p>治愈</p>
+					<p>轻音乐</p>
+					<p>爵士</p>
+					<p>乡村</p>
+					<p>蓝调</p>
+					<p>民谣</p>
+					<p>电子</p>
+					<p>民族乐</p>
+				</div>
+			</div>
+			
+			<div class="nan1" id="maleSingers">
+				<h1>男歌手</h1>
+				<div id="maleSingersContainer">
+					<div class="image-text-container1" data-letter="H">
+						<img src="images/x1.jpg" alt="华晨宇">
+						<div class="text">华晨宇</div>
+					</div>
+					<div class="image-text-container1" data-letter="Z">
+						<img src="images/x2.jpg" alt="张杰">
+						<div class="text">张杰</div>
+					</div>
+					<div class="image-text-container1" data-letter="X">
+						<img src="images/x3.jpg" alt="薛之谦">
+						<div class="text">薛之谦</div>
+					</div>
+					<div class="image-text-container1" data-letter="H">
+						<img src="img/歌手图片/胡歌.jpeg" alt="胡歌">
+						<div class="text">胡歌</div>
+					</div>
+					<div class="image-text-container1" data-letter="Y">
+						<img src="img/歌手图片/易烊千玺.jpg" alt="易烊千玺">
+						<div class="text">易烊千玺</div>
+					</div>
+					<div class="image-text-container1" data-letter="W">
+						<img src="img/歌手图片/王俊凯.jpg" alt="王俊凯">
+						<div class="text">王俊凯</div>
+					</div>
+					<div class="image-text-container1" data-letter="L">
+						<img src="img/歌手图片/陆虎.jpeg" alt="陆虎">
+						<div class="text">陆虎</div>
+					</div>
+					<div class="image-text-container1" data-letter="C">
+						<img src="img/歌手图片/蔡徐坤.jpg" alt="蔡徐坤">
+						<div class="text">蔡徐坤</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="nan1" id="femaleSingers">
+				<h1>女歌手</h1>
+				<div id="femaleSingersContainer">
+					<div class="image-text-container1" data-letter="Z">
+						<img src="images/x4.jpg" alt="周笔畅">
+						<div class="text">周笔畅</div>
+					</div>
+					<div class="image-text-container1" data-letter="D">
+						<img src="images/x5.jpg" alt="邓紫棋">
+						<div class="text">邓紫棋</div>
+					</div>
+					<div class="image-text-container1" data-letter="C">
+						<img src="images/x6.jpg" alt="蔡依林">
+						<div class="text">蔡依林</div>
+					</div>
+					<div class="image-text-container1" data-letter="N">
+						<img src="img/歌手图片/那英.jpeg" alt="那英">
+						<div class="text">那英</div>
+					</div>
+					<div class="image-text-container1" data-letter="Z">
+						<img src="img/歌手图片/张靓颖.jpg" alt="张靓颖">
+						<div class="text">张靓颖</div>
+					</div>
+					<div class="image-text-container1" data-letter="W">
+						<img src="img/歌手图片/王心凌.jpeg" alt="王心凌">
+						<div class="text">王心凌</div>
+					</div>
+					<div class="image-text-container1" data-letter="S">
+						<img src="img/歌手图片/孙燕姿.jpeg" alt="孙燕姿">
+						<div class="text">孙燕姿</div>
+					</div>
+					<div class="image-text-container1" data-letter="W">
+						<img src="img/歌手图片/王菲.jpeg" alt="王菲">
+						<div class="text">王菲</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="foot">
+				<p>© 2025 MUSIC DOG 音乐平台 | 版权信息 | 联系我们 | 隐私政策 | 用户协议</p>
+			</div>
+		</div>
+		
+		<script>
+			function filterByLetter(letter) {
+				const allSingers = document.querySelectorAll('.image-text-container1');
+				allSingers.forEach(singer => {
+					singer.style.display = 'none';
+				});
+				
+				const matchedSingers = document.querySelectorAll(`.image-text-container1[data-letter="${letter}"]`);
+				matchedSingers.forEach(singer => {
+					singer.style.display = 'inline-block';
+				});
+				
+				if(letter === 'X') {
+					const xue = document.querySelector('.image-text-container1[data-letter="X"]');
+					if(xue) xue.style.display = 'inline-block';
+				}
+			}
+			
+			function showAllSingers() {
+				const allSingers = document.querySelectorAll('.image-text-container1');
+				allSingers.forEach(singer => {
+					singer.style.display = 'inline-block';
+				});
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>支付页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+        }
+        .payment-container h1 {
+            color: #d3b7d8;
+            margin-bottom: 20px;
+        }
+        .payment-container p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .qr-code {
+            margin: 20px auto;
+            width: 250px;
+            height: 250px;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+        }
+        .qr-code img {
+            width: 100%;
+            height: 100%;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d3b7d8;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-btn:hover {
+            background-color: #c0a5c5;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h1>支付会员费用</h1>
+        <p>请使用微信/支付宝扫描下方二维码完成支付</p>
+        <div class="qr-code">
+            <img src="img/二维码.jpg" alt="支付二维码">
+        </div>
+        <p>支付金额: <strong>18元</strong></p>
+        <a href="vip.html" class="back-btn">返回VIP页面</a>
+    </div>
+</body>
+</html>

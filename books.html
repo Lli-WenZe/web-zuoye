@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUSIC DOG - 音乐排行榜</title>
+    <link rel="stylesheet" href="css/books.css">
+</head>
+<body>
+    <div class="qj">
+        <div class="top">
+            <img src="img/logo 许治珍.png" alt="MUSIC DOG Logo">
+            <div id="ss">
+                <form action="/search" method="get">
+                    <input type="text" name="query" placeholder="请输入搜索关键字" required>
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+            <div id="dl">
+                <a href="login.html">
+                    <p>登录 | 注册</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="dht">
+            <a href="index.html" id="a3">首页</a>
+            <a href="ren.html">歌手</a>
+            <a href="classes.html">分类歌单</a>
+            <a href="books.html"id="a4">听书精选</a>
+            <a href="paihang.html">排行榜</a>
+            <a href="zhuanji.html">专辑</a>
+            <a href="vip.html">Vip会员</a>
+            <a href="goods.html">商城</a>
+        </div>
+        
+        <!--lunbo-->
+        <div class="lb">
+            <div class="lunbo">
+                <ul class="wz">
+                    <li class="zz" onmouseover="lun(0)">有声小说</li>
+                    <li class="zz" onmouseover="lun(1)">相声曲艺</li>
+                    <li class="zz" onmouseover="lun(2)">广播剧</li>
+                    <li class="zz" onmouseover="lun(3)">儿童天地</li>
+                    <li class="zz" onmouseover="lun(4)">情感生活</li>
+                </ul>
+                <div class="tp">
+                    <img src="img/听书推荐banner/1.jpg" class="tt">
+                </div>
+            </div>
+        </div>
+        <!--lunbo-->
+
+        <!--每日推荐-->
+        <div class="tuij">
+            <h2>每日推荐</h2>
+            <table id="t1">
+                <tr id="tr1">
+                    <td>
+                        <img src="img/歌单图片/2.jpg" />
+                        <p class="w1">首辅娇娘|爆笑穿越|多播古言精品<br />霸榜作品偏方方著|会员</p>
+                    </td>
+                    <td>
+                        <img src="img/歌单图片/3.jpg" id="tp" />
+                        <p class="w1">爆笑父与子：成长没烦恼|睡前故事<br />亲子笑话|大有叔叔</p>
+                    </td>
+                    <td>
+                        <img src="img/歌单图片/4.jpg" />
+                        <p class="w1">深度睡眠|一分钟快速入睡|冥想</p>
+                    </td>
+                    <td>
+                        <img src="img/歌单图片/5.jpg" />
+                        <p class="w1">轻舟倚春晓【精品多人广播剧】小<br />甜剧|励志|现言|校园青春</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--每日推荐-->
+
+        <!--有声小说-->
+        <div class="xs">
+            <p><strong>有声小说...</strong></p>
+            <h1>新品排行榜</h1>
+            <div id="zuo">
+                <table id="t2">
+                    <tr id="tr2">
+                        <td>
+                            <img src="img/歌单图片/2.jpg" />
+                            <p class="w2">首辅娇娘</p>
+                        </td>
+                        <td>
+                            <img src="img/歌单图片/3.jpg" id="tp" />
+                            <p class="w2">爆笑父与子</p>
+                        </td>
+                    </tr>
+                    <tr id="tr3">
+                        <td>
+                            <img src="img/歌单图片/5.jpg" />
+                            <p class="w2">经典抒情歌曲</p>
+                        </td>
+                        <td>
+                            <img src="img/歌单图片/6.jpg" />
+                            <p class="w2">经典老歌</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="you">
+                <table id="leaderboard">
+                    <thead>
+                        <tr id="a2">
+                            <th id="a1">排名</th>
+                            <th id="a1">名称</th>
+                            <th id="a1">分数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 排名数据将动态插入到这里 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--有声小说-->
+
+        <!--相声曲艺-->
+        <div class="xs">
+            <p><strong>有声小说...</strong></p>
+            <h1>新品排行榜</h1>
+            <div id="zuo">
+                <table id="t2">
+                    <tr id="tr2">
+                        <td>
+                            <img src="img/歌单图片/2.jpg" />
+                            <p class="w2">首辅娇娘</p>
+                        </td>
+                        <td>
+                            <img src="img/歌单图片/3.jpg" id="tp" />
+                            <p class="w2">爆笑父与子</p>
+                        </td>
+                    </tr>
+                    <tr id="tr3">
+                        <td>
+                            <img src="img/歌单图片/5.jpg" />
+                            <p class="w2">经典抒情歌曲</p>
+                        </td>
+                        <td>
+                            <img src="img/歌单图片/6.jpg" />
+                            <p class="w2">经典老歌</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="you">
+                <table id="leaderboard1">
+                    <thead>
+                        <tr id="a2">
+                            <th id="a1">排名</th>
+                            <th id="a1">名称</th>
+                            <th id="a1">分数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 排名数据将动态插入到这里 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--相声曲艺-->
+
+        <!--广播剧-->
+        <div class="tuij">
+            <h2>广播剧...</h2>
+            <table id="t1">
+                <tr id="tr1">
+                    <td>
+                        <img src="img/歌单图片/2.jpg" />
+                        <p class="w1">首辅娇娘|爆笑穿越|多播古言精品<br />霸榜作品偏方方著|会员</p>
+                    </td>
+                    <td>
+                        <img src="img/歌单图片/3.jpg" id="tp" />
+                        <p class="w1">爆笑父与子：成长没烦恼|睡前故事<br />亲子笑话|大有叔叔</p>
+                    </td>
+                    <td>
+                        <img src="img/歌单图片/4.jpg" />
+                        <p class="w1">深度睡眠|一分钟快速入睡|冥想</p>
+                    </td>
+                    <td>
+                        <img src="img/歌单图片/5.jpg" />
+                        <p class="w1">轻舟倚春晓【精品多人广播剧】小<br />甜剧|励志|现言|校园青春</p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--广播剧-->
+
+        <div class="foot">
+            <p>© 2025 MUSIC DOG 音乐平台 | 版权信息 | 联系我们 | 隐私政策 | 用户协议</p>
+        </div>
+    </div><!--qj-->
+    <script type="text/javascript" src="js/听书精选.js"></script>
+    <script src="排行榜.js"></script>
+    <script type="text/javascript" src="js/排行榜1.js"></script>
+</body>
+</html>

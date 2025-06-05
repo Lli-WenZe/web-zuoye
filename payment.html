@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>付款 - 仁泽网</title>
+    <link rel="stylesheet" href="css/paihang.css">
+    <link rel="stylesheet" href="css/css2.css">
+    <style>
+        .qj {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bodyer {
+            flex: 1;
+            padding: 20px 0;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 顶部样式 */
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #a8dd9f;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        #dl a {
+            color: #FF4400;
+            text-decoration: none;
+        }
+
+        /* 导航条 */
+        .dht {
+            display: flex;
+            justify-content: center;
+            background: #a8dd9f;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dht a {
+            padding: 0 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dht a:hover {
+            color: #FF4400;
+        }
+
+        #a4 {
+            color: #FF4400;
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        .foot {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            margin-top: 30px;
+        }
+
+        /* 支付页面样式 */
+        .payment-header {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .amount {
+            font-size: 36px;
+            color: #FF4400;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .countdown {
+            color: #666;
+            font-size: 16px;
+            background: #FFF7E6;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .qrcode-box {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+
+        .qrcode-img {
+            width: 240px;
+            height: 240px;
+            border: 1px solid #eee;
+            padding: 12px;
+            margin: 0 auto;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .open-app-tip {
+            color: #666;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+
+        .payment-status {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+            margin-bottom: 30px;
+        }
+
+        .status-icon {
+            width: 80px;
+            height: 80px;
+            background: #f6ffed;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            border: 2px solid #b7eb8f;
+        }
+
+        .success-icon {
+            color: #52c41a;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .payment-status h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .payment-status p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .back-home-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #FF4400;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-home-btn:hover {
+            background: #FF6E00;
+        }
+
+        /* 订单信息 */
+        .order-info {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .payment-header, .qrcode-box, .payment-status {
+                padding: 30px 20px;
+            }
+
+            .amount {
+                font-size: 28px;
+            }
+
+            .qrcode-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            #ss input {
+                width: 180px;
+            }
+
+            .dht {
+                flex-wrap: wrap;
+            }
+
+            .dht a {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="qj">
+        <div class="top">
+            <div id="dl">
+                <a href="login.html">
+                    <p>登录 | 注册</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="dht">
+            <a href="index.html" id="a3">首页</a>
+            <a href="ren.html">歌手</a>
+            <a href="classes.html">分类歌单</a>
+            <a href="books.html">听书精选</a>
+            <a href="paihang.html">排行榜</a>
+            <a href="zhuanji.html">专辑</a>
+            <a href="vip.html">Vip会员</a>
+            <a href="goods.html" id="a4">商城</a>
+        </div>
+
+        <div class="bodyer">
+            <div class="container">
+                <!-- 订单信息 -->
+                <div class="order-info">
+                    <div class="info-row">
+                        <span>订单编号：</span>
+                        <span id="order-no"></span>
+                    </div>
+                    <div class="info-row">
+                        <span>支付方式：</span>
+                        <span id="payment-method"></span>
+                    </div>
+                    <div class="info-row">
+                        <span>商品名称：</span>
+                        <span id="product-name"></span>
+                    </div>
+                </div>
+
+                <div class="payment-header">
+                    <div class="countdown">剩余支付时间：<span id="timer">29:59</span></div>
+                    <div class="amount" id="payAmount"></div>
+                    <p>请扫描下方二维码完成支付</p>
+                </div>
+
+                <div class="qrcode-box">
+                    <img src="images/wrong.png" class="qrcode-img" alt="支付二维码" onclick="window.location.href='wrong.html'">
+                    <div class="open-app-tip">打开手机扫一扫完成支付</div>
+                </div>
+
+                <div class="payment-status" id="paymentStatus">
+                    <div class="status-icon">
+                        <i class="success-icon">✓</i>
+                    </div>
+                    <h2>支付成功！</h2>
+                    <p>感谢您的购买，商品将尽快发货</p>
+                    <button class="back-home-btn" onclick="window.location.href='success.html'">查看订单</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="foot">
+            <p>© 2023 淘宝网 版权所有</p>
+        </div>
+    </div>
+
+    <script>
+        // 从URL获取支付信息
+        const params = new URLSearchParams(window.location.search);
+        const paymentInfo = {
+            amount: params.get('amount') || '0.00',
+            orderNo: params.get('orderNo') || 'TB' + Date.now().toString().slice(-6),
+            payment: params.get('payment') || 'alipay',
+            product: decodeURIComponent(params.get('product')) || '商品',
+            color: decodeURIComponent(params.get('color')) || '白色',
+            size: decodeURIComponent(params.get('size')) || 'M',
+            quantity: params.get('quantity') || 1
+        };
+
+        // 设置支付信息
+        document.getElementById('payAmount').textContent = `¥${paymentInfo.amount}`;
+        document.getElementById('order-no').textContent = paymentInfo.orderNo;
+        document.getElementById('payment-method').textContent =
+            paymentInfo.payment === 'alipay' ? '支付宝支付' : '微信支付';
+        document.getElementById('product-name').textContent = paymentInfo.product;
+
+        // 支付倒计时
+        let timeLeft = 1800; // 30分钟
+        const timerElement = document.getElementById('timer');
+
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            if(timeLeft <= 0) {
+                alert('支付超时，订单已自动取消');
+                window.location.href = 'order-cancel.html';
+            } else {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
+            }
+        }
+
+        // 模拟支付成功
+        function checkPayment() {
+            setTimeout(() => {
+                document.getElementById('paymentStatus').style.display = 'block';
+                // 3秒后跳转到成功页面
+                setTimeout(() => {
+                    window.location.href = 'success.html?' + window.location.search;
+                }, 3000);
+            }, 5000); // 模拟5秒后支付成功
+        }
+
+        // 初始化
+        updateTimer();
+        checkPayment();
+    </script>
+</body>
+</html>

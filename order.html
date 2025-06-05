@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单确认 - 仁泽网</title>
+    <link rel="stylesheet" href="css/paihang.css">
+    <link rel="stylesheet" href="css/css2.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", Arial, sans-serif;
+        }
+
+        .qj {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bodyer {
+            flex: 1;
+            padding: 20px 0;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 顶部样式 */
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #a8dd9f;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        #ss input {
+            padding: 8px 15px;
+            border: 1px solid #FF4400;
+            border-radius: 4px;
+            width: 300px;
+        }
+
+        #ss button {
+            padding: 8px 15px;
+            background: #FF4400;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+
+        #dl a {
+            color: #FF4400;
+            text-decoration: none;
+        }
+
+        /* 导航条 */
+        .dht {
+            display: flex;
+            justify-content: center;
+            background: #a8dd9f;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dht a {
+            padding: 0 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dht a:hover {
+            color: #FF4400;
+        }
+
+        #a4 {
+            color: #FF4400;
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        .foot {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            margin-top: 30px;
+        }
+
+        /* 订单步骤 */
+        .order-steps {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0;
+            margin-bottom: 30px;
+            position: relative;
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .order-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: #eee;
+            z-index: 1;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #666;
+            flex: 1;
+        }
+
+        .step-item.active {
+            color: #FF4400;
+            font-weight: 600;
+        }
+
+        .step-number {
+            display: inline-flex;
+            width: 32px;
+            height: 32px;
+            background: #ddd;
+            color: #fff;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .step-item.active .step-number {
+            background: #FF4400;
+        }
+
+        /* 订单卡片 */
+        .order-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .order-card h2 {
+            margin-top: 0;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            font-size: 20px;
+        }
+
+        /* 商品信息 */
+        .product-info-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-thumb {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .product-detail {
+            flex: 1;
+        }
+
+        .product-detail h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .product-detail p {
+            margin: 4px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .price-highlight {
+            color: #FF4400;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .quantity {
+            min-width: 100px;
+            text-align: right;
+            color: #666;
+        }
+
+        /* 支付方式 */
+        .payment-methods {
+            margin: 30px 0;
+        }
+
+        .payment-methods h3 {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .method-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: #fff;
+        }
+
+        .method-card:hover {
+            border-color: #FF4400;
+            box-shadow: 0 2px 10px rgba(255,68,0,0.1);
+        }
+
+        .method-card.active {
+            border-color: #FF4400;
+            background: #FFF7E6;
+            position: relative;
+        }
+
+        .method-card.active::after {
+            content: '✓';
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 24px;
+            height: 24px;
+            background: #FF4400;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .payment-methods img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .method-card h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .method-card p {
+            margin: 0;
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* 总价 */
+        .total-row {
+            text-align: right;
+            padding: 20px;
+            border-top: 2px solid #eee;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .total-label {
+            margin-right: 15px;
+        }
+
+        /* 操作按钮 */
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .modify-btn {
+            background: #fff;
+            border: 1px solid #FF4400;
+            color: #FF4400;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .modify-btn:hover {
+            background: rgba(255,68,0,0.05);
+        }
+
+        .btn.login-btn {
+            background: #FF4400;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn.login-btn:hover {
+            background: #FF6E00;
+        }
+
+        @media (max-width: 768px) {
+            .order-steps {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .order-steps::before {
+                display: none;
+            }
+
+            .product-info-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .quantity {
+                text-align: left;
+                width: 100%;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            #ss input {
+                width: 180px;
+            }
+
+            .dht {
+                flex-wrap: wrap;
+            }
+
+            .dht a {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="qj">
+        <div class="top">
+            <img src="img/logo 许治珍.png" alt="仁泽网" width="120">
+            <div id="ss">
+                <form action="/search" method="get">
+                    <input type="text" name="query" placeholder="请输入搜索关键字" required>
+                    <button type="submit">搜索</button>
+                </form>
+            </div>
+            <div id="dl">
+                <a href="login.html">
+                    <p>登录 | 注册</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="dht">
+            <a href="index.html" id="a3">首页</a>
+            <a href="ren.html">歌手</a>
+            <a href="classes.html">分类歌单</a>
+            <a href="books.html">听书精选</a>
+            <a href="paihang.html">排行榜</a>
+            <a href="zhuanji.html">专辑</a>
+            <a href="vip.html">Vip会员</a>
+            <a href="goods.html" id="a4">商城</a>
+        </div>
+
+        <div class="bodyer">
+            <div class="container">
+                <h1 style="text-align: center;margin: 40px 0;">订单确认</h1>
+
+                <!-- 订单步骤指示 -->
+                <div class="order-steps">
+                    <div class="step-item active">
+                        <div class="step-number">1</div>
+                        <div>确认订单</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div>付款</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div>交易成功</div>
+                    </div>
+                </div>
+
+                <!-- 订单信息卡片 -->
+                <div class="order-card">
+                    <h2>订单详情</h2>
+                    <div class="product-info-row">
+                        <img src="https://via.placeholder.com/80x80" class="product-thumb" alt="商品图" id="product-thumb">
+                        <div class="product-detail">
+                            <h3 id="product-name"></h3>
+                            <p>颜色：<span id="color"></span></p>
+                            <p>尺码：<span id="size"></span></p>
+                            <p class="price-highlight" id="unit-price"></p>
+                        </div>
+                        <div class="quantity">
+                            <span>数量：</span>
+                            <span id="quantity"></span>
+                        </div>
+                    </div>
+
+                    <!-- 支付方式 -->
+                    <div class="payment-methods">
+                        <h3>选择支付方式</h3>
+                        <div class="method-card active" data-method="alipay">
+                            <img src="images/zhifubao.png" alt="支付宝">
+                            <div>
+                                <h4>支付宝支付</h4>
+                                <p>推荐已安装支付宝客户端的用户使用</p>
+                            </div>
+                        </div>
+                        <div class="method-card" data-method="wechat">
+                            <img src="images/weixin.png" alt="微信">
+                            <div>
+                                <h4>微信支付</h4>
+                                <p>微信用户推荐使用</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 总价 -->
+                    <div class="total-row">
+                        <span class="total-label">实付款：</span>
+                        <span class="price-highlight" id="total-price"></span>
+                    </div>
+
+                    <!-- 操作按钮 -->
+                    <div class="action-buttons">
+                        <button class="modify-btn" onclick="goBackToProduct()">返回修改</button>
+                        <button class="btn login-btn" onclick="submitOrder()">立即付款</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="foot">
+            <p>© 2025 仁泽网 版权所有</p>
+        </div>
+    </div>
+
+    <script>
+        // 从URL获取订单信息
+        const params = new URLSearchParams(window.location.search);
+        const orderInfo = {
+            product: params.get('product') || '2023新款夏季女装时尚短袖T恤',
+            color: params.get('color') || '白色',
+            size: params.get('size') || 'M',
+            quantity: parseInt(params.get('quantity')) || 1,
+            price: parseFloat(params.get('price')) || 89.00,
+            img: params.get('img') || 'https://via.placeholder.com/80x80'
+        };
+
+        // 计算总价
+        function calculateTotal() {
+            return orderInfo.quantity * orderInfo.price;
+        }
+
+        // 渲染订单信息
+        function renderOrder() {
+            document.getElementById('product-name').textContent = orderInfo.product;
+            document.getElementById('color').textContent = orderInfo.color;
+            document.getElementById('size').textContent = orderInfo.size;
+            document.getElementById('quantity').textContent = orderInfo.quantity;
+            document.getElementById('unit-price').textContent = `¥${orderInfo.price.toFixed(2)}`;
+            document.getElementById('total-price').textContent = `¥${calculateTotal().toFixed(2)}`;
+            document.getElementById('product-thumb').src = orderInfo.img;
+        }
+
+        // 返回商品页面
+        function goBackToProduct() {
+            const productParams = new URLSearchParams({
+                product: orderInfo.product,
+                color: orderInfo.color,
+                size: orderInfo.size,
+                quantity: orderInfo.quantity,
+                price: orderInfo.price,
+                img: orderInfo.img
+            });
+            window.location.href = `product.html?${productParams.toString()}`;
+        }
+
+        // 提交订单
+        function submitOrder() {
+            const activeCard = document.querySelector('.method-card.active');
+            if (!activeCard) {
+                alert('请选择支付方式');
+                return;
+            }
+
+            const paymentMethod = activeCard.dataset.method;
+            const orderNo = `TB${Date.now().toString().slice(-6)}`;
+            const amount = calculateTotal().toFixed(2);
+
+            const paymentParams = new URLSearchParams({
+                amount: amount,
+                orderNo: orderNo,
+                payment: paymentMethod,
+                product: encodeURIComponent(orderInfo.product),
+                color: encodeURIComponent(orderInfo.color),
+                size: encodeURIComponent(orderInfo.size),
+                quantity: orderInfo.quantity,
+                img: encodeURIComponent(orderInfo.img)
+            });
+
+            window.location.href = `payment.html?${paymentParams.toString()}`;
+        }
+
+        // 支付方式选择
+        document.querySelectorAll('.method-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.method-card').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 初始化渲染
+        renderOrder();
+    </script>
+</body>
+</html>

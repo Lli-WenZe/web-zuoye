@@ -1,0 +1,580 @@
+*{
+    margin:0; 
+    padding:0;
+}
+body{
+    width: 1480px;
+    margin: 0px auto;
+    background-color: #f5f9ff;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+/* .qj 区块 */
+.qj{
+    background-color: #effbed;
+    width: 1480px;
+}
+
+/* 顶部logo与搜索栏整体布局 */
+.top{
+    height:80px;
+    background-color: #dff7dc;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.top img{
+    height: 95px;
+    width: 170px;
+    margin-top: -5px;
+}
+
+/* 搜索栏 */
+#ss {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+}
+#ss input[type="text"] {  
+    width: 400px;
+    height: 35px;
+    padding: 0 15px;  
+    font-size: 16px;  
+    border: 1px solid #ccc;  
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}  
+#ss button {  
+    width: 80px;
+    height: 37px;  
+    font-size: 16px;  
+    border: 1px solid #ccc;  
+    background-color: #4CAF50;  
+    color: white;  
+    border-radius: 0 20px 20px 0; 
+    cursor: pointer;  
+    transition: background-color 0.3s;
+}  
+#ss button:hover {  
+    background-color: #45a049;
+}
+
+/* 登录按钮 */
+#dl {
+    margin-left: auto;
+}
+#dl a{
+    width: 120px;
+    height: 35px;
+    border-radius: 20px;
+    color: white;   
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    transition: background-color 0.3s;
+}
+#dl a:hover {  
+    background-color: #45a049;
+}
+
+/* 导航条 */
+.dht{
+    background-color: #b6dab2;
+    width: 1480px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.dht a{
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    font-family: "微软雅黑";
+    display: block;
+    width: 130px;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s; 
+    margin: 0 5px;
+    border-radius: 5px;
+}
+#a3{
+    margin-left: 0;
+}
+#a4{
+    background-color: #ffccd5;
+    font-weight: bold;
+}
+.dht a:hover {  
+    background-color: #a8d8ea;  
+    transform: translateY(-3px);  
+}
+   
+  /* banner*/
+.carousel {  
+    position: relative;  
+    width: 1470px;  
+      
+    overflow: hidden;  
+    border-radius: 10px;  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+    margin-top: 100px;
+    margin-left: 4px;
+}  
+  
+.carousel-inner {  
+    display: flex;  
+    transition: transform 0.5s ease-in-out;  
+}  
+  
+.carousel-item {  
+    min-width: 100%;  
+    box-sizing: border-box;  
+}  
+  
+.carousel-item img {  
+    width: 100%; 
+    height: 650px; 
+    border-radius: 10px;  
+}  
+  
+.carousel-control {  
+    position: absolute;  
+    top: 50%;  
+    transform: translateY(-50%);  
+    background-color: rgba(0, 0, 0, 0.5);  
+    color: white;  
+    border: none;  
+    padding: 10px;  
+    cursor: pointer;  
+    z-index: 10;  
+}  
+  
+.carousel-control.prev {  
+    left: 10px;  
+}  
+  
+.carousel-control.next {  
+    right: 10px;  
+}
+
+/*banner*/
+
+
+.nr{
+	height: 500px;
+	background-color: #f9ebd7;
+	margin-top: 60px;
+	padding-top: 10px;
+}
+.gedan{
+	font-size: 20px;
+	float: left;
+	margin-left: 50px;
+}
+#gd{
+	float: right;
+	margin-right: 50px;
+	
+	
+}
+.left{
+	width: 380px;
+	height: 350px;
+	margin-top: 10px;
+	margin-left: 100px;
+}
+.left img{
+	width: 530px;
+	height: 330px;
+	margin-top: 20px;
+	margin-left: 20px;
+	object-fit: cover;
+}
+.left p{
+	margin-left: 30px;
+	font-size: 16px;
+}
+
+.right{
+	width: 740px;
+	height: 350px;
+
+	float: right;
+	margin-right: 50px;
+	margin-top: -350px;
+	
+	
+}
+.right img{
+	width: 200px;
+	height: 160px;
+	margin-top: 35px;
+	margin-left: 20px;
+	object-fit: cover;
+	
+}
+
+	.w1{
+font-size: 13px;
+line-height: 20px;
+margin-left: 50px;
+}
+.w2{
+font-size: 15px;
+line-height: 20px;
+margin-left: 60px;
+}
+
+
+
+#tr1{
+	float: left;
+}
+#tr2{
+	float: left;
+	margin-top: -30px;
+}
+/*歌单推荐*/
+
+
+/*新歌首发*/
+.nr2{
+	height: 400px;
+	background-color: #f9ebd7;
+	margin-top: 60px;
+	padding-top: 10px;
+}
+#left1{
+	width: 680px;
+	height: 350px;
+
+	float: left;
+	margin-left: -15px;
+	margin-top: 10px;
+	
+	
+	
+}
+#left1 img{
+	width: 200px;
+	height: 110px;
+	margin-top: 35px;
+	margin-right: 20px;
+	
+}
+
+#right1{
+	width: 380px;
+	height: 350px;
+	
+float: right;
+	
+	margin-right: 250px;
+	
+}
+#right1 img{
+	width: 530px;
+	height: 280px;
+	margin-top: 20px;
+	margin-left: -15px;
+}
+#right1 p{
+
+	font-size: 15px;
+}
+.w3{
+	
+	font-size: 13px;
+}
+/*新歌首发*/
+
+
+/*精彩推荐*/
+.nr3{
+	
+	height: 400px;
+	/*background-color:#f1fae0;*/
+   margin-top: 30px;
+}
+        li {
+            list-style: none;
+        }
+        .inner img{
+        	width: 1270px;
+        	height: 360px;
+        	margin-top: 20px;
+        	
+        	
+        }
+        
+        .box {
+        	
+            position: relative;
+            width: 1270px;
+            height: 390px;
+            margin: 20px auto;
+            
+       
+        }
+        
+        .inner {
+            position: relative;
+            width: 1260px;
+            height: 360px;
+            margin: 5px;
+            overflow: hidden;
+        }
+        
+        .inner ul {
+            position: absolute;
+            width:1000%;
+            height: 100%;
+        }
+        
+        .inner ul li {
+            float: left;
+            width:1260px;
+            height: 360px;
+        }
+        
+       
+        .focus {
+            position: absolute;
+            display: none;
+            width: 99%;
+            height: 30px;
+            top: 0px;
+            bottom: 0px;
+            left: 5px;
+            margin: auto;
+        }
+        
+        .left-button,
+        .right-button {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            top: 0px;
+            bottom: 0px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+        
+        .right-button {
+            right: 0px;
+        }
+        
+        .left-button>div,
+        .right-button>div {
+            width: 15px;
+            height: 15px;
+            margin-top: 7.5px;
+            border: solid 2px white;
+            box-sizing: border-box;
+            transform: rotateZ(45deg);
+        }
+        
+        .left-button>div {
+            border-top: none;
+            border-right: none;
+            margin-left: 10px;
+        }
+        
+        .right-button>div {
+            position: absolute;
+            border-bottom: none;
+            border-left: none;
+            right: 10px;
+        }
+        
+        ol {
+            position: absolute;
+            height: 20px;
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        ol li {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+            line-height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 12px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .current {
+            background: orangered;
+            color: white;
+        }
+
+/*精彩推荐*/
+
+.nr4{
+	
+	height: 300px;
+	/*background-color: #f1fae0;*/
+	margin-top:60px;
+}
+
+
+ .image-container {  
+    position: relative;  
+    display: inline-block;  
+    overflow: hidden; /* 防止图片放大时溢出容器 */  
+    margin: 20px;  
+  }  
+  
+  .image-container img {  
+    width: 200px;  
+    height: 200px;  
+    display: block;  
+    transition: transform 0.3s ease; /* 平滑过渡效果 */  
+    margin-top: 40px;
+	object-fit: cover;
+  }  
+  
+  .image-container:hover img {  
+    transform: scale(1.1); /* 鼠标悬停时放大图片 */  
+  }  
+  
+  .overlay {  
+    position: absolute;  
+    top: 0;  
+    left: 0;  
+    width: 100%;  
+    height: 100%;  
+    background-color: rgba(0, 0, 0, 0.5); /* 灰色蒙版 */  
+    opacity: 0;  
+    transition: opacity 0.3s ease;  
+    pointer-events: none; /* 确保蒙版不会阻止鼠标与图片的交互 */  
+     margin-top: 30px;
+  }  
+  
+  .image-container:hover .overlay {  
+    opacity: 1; /* 鼠标悬停时显示蒙版 */  
+  }  
+  
+  .play-button {  
+  	display: inline-block;  
+    width: 0;  
+    height: 0;  
+    border-left: 50px solid gray; /* 左边框实色，形成三角形的一边 */  
+    border-top: 35px solid transparent; /* 上边框透明，形成三角形的顶部 */  
+    border-bottom: 35px solid transparent; /* 下边框透明，形成三角形的底部 */  
+   
+    position: absolute;  
+    top:40%;  
+    left: 41%;  
+   
+    opacity: 0;  
+    transition: opacity 0.3s ease, transform 0.3s ease;  
+    transform: scale(0); /* 初始时播放器图标缩放为0 */  
+  }  
+  
+  .image-container:hover .play-button {  
+    opacity: 1; /* 鼠标悬停时显示播放器图标 */  
+    transform: scale(1); /* 将播放器图标缩放回正常大小 */  
+  }  
+  
+  /* 可选的：添加一个圆形背景到播放器图标 */  
+  .play-button::before {  
+    content: '';  
+    position: absolute;  
+    top: -50px; /* 调整以使圆形背景位于三角形下方中央 */  
+    left: -80px; /* 调整以使圆形背景水平居中 */  
+    width: 100px; /* 圆形背景的直径 */  
+    height: 100px; /* 圆形背景的高度 */  
+    background-color: rgba(255, 255, 255, 0.7); /* 圆形背景的颜色和透明度 */  
+    border-radius: 50%; /* 圆形 */  
+    z-index: -1; /* 确保圆形背景位于三角形下方 */  
+  }  
+.foot{
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+body p:hover{
+	color: #a3d99d;
+	 transition: color 0.s ease;
+	  cursor: pointer; /* 鼠标悬停时显示手型光标 */ 
+}
+
+
+/* 新增点击效果样式 */
+			.image-container a {
+				display: block;
+				position: relative;
+				text-decoration: none;
+			}
+			.image-container:active img {
+				transform: scale(0.95);
+				transition: transform 0.1s ease;
+			}
+			.image-container.clicked img {
+				animation: pulse 0.5s;
+			}
+			@keyframes pulse {
+				0% { transform: scale(1); }
+				50% { transform: scale(0.95); }
+				100% { transform: scale(1); }
+			}
+/* 视频模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+}
+
+.modal-content video {
+    width: 100%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #a3d99d;
+}

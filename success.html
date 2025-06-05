@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交易成功 - 仁泽网</title>
+    <link rel="stylesheet" href="css/paihang.css">
+    <link rel="stylesheet" href="css/css2.css">
+    <style>
+        .qj {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bodyer {
+            flex: 1;
+            padding: 20px 0;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 顶部样式 */
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            background: #a8dd9f;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        #dl a {
+            color: #FF4400;
+            text-decoration: none;
+        }
+
+        /* 导航条 */
+        .dht {
+            display: flex;
+            justify-content: center;
+            background: #a8dd9f;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dht a {
+            padding: 0 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dht a:hover {
+            color: #FF4400;
+        }
+
+        #a4 {
+            color: #FF4400;
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        .foot {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            margin-top: 30px;
+        }
+
+        /* 成功页面样式 */
+        .success-card {
+            background: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .success-icon {
+            font-size: 80px;
+            color: #52c41a;
+            margin: 20px 0;
+        }
+
+        .success-card h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .success-card p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .order-info {
+            text-align: left;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .express-progress {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f8f8;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        .express-progress h3 {
+            text-align: left;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .progress-step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .step-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-active {
+            background: #FF4400;
+            color: white;
+        }
+
+        .progress-step div {
+            text-align: left;
+        }
+
+        .progress-step p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .progress-step p:first-child {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .action-buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .action-buttons button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .login-btn {
+            background: #FF4400;
+            color: white;
+        }
+
+        .modify-btn {
+            background: white;
+            color: #FF4400;
+            border: 1px solid #FF4400;
+        }
+
+        .action-buttons button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .success-card {
+                padding: 30px 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .action-buttons button {
+                width: 100%;
+            }
+
+            #ss input {
+                width: 180px;
+            }
+
+            .dht {
+                flex-wrap: wrap;
+            }
+
+            .dht a {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="qj">
+        <div class="top">
+        </div>
+
+        <div class="dht">
+            <a href="index.html" id="a3">首页</a>
+            <a href="ren.html">歌手</a>
+            <a href="classes.html">分类歌单</a>
+            <a href="books.html">听书精选</a>
+            <a href="paihang.html">排行榜</a>
+            <a href="zhuanji.html">专辑</a>
+            <a href="vip.html">Vip会员</a>
+            <a href="goods.html" id="a4">商城</a>
+        </div>
+
+        <div class="bodyer">
+            <div class="container">
+                <div class="success-card">
+                    <div class="success-icon">✓</div>
+                    <h1>交易成功！</h1>
+                    <p id="success-amount">我们已收到您的付款 ¥168.00</p>
+
+                    <div class="order-info">
+                        <div class="info-row">
+                            <span>订单编号：</span>
+                            <span id="order-no">20230815123456</span>
+                        </div>
+                        <div class="info-row">
+                            <span>商品名称：</span>
+                            <span id="product-name">2023新款夏季女装时尚短袖T恤</span>
+                        </div>
+                        <div class="info-row">
+                            <span>预计送达：</span>
+                            <span>2023-08-18 前</span>
+                        </div>
+                        <div class="info-row">
+                            <span>物流公司：</span>
+                            <span>菜鸟速递</span>
+                        </div>
+                    </div>
+
+                    <div class="express-progress">
+                        <h3>物流进度</h3>
+                        <div class="progress-step">
+                            <div class="step-icon step-active">✓</div>
+                            <div>
+                                <p>商家已发货</p>
+                            </div>
+                        </div>
+                        <div class="progress-step">
+                            <div class="step-icon"></div>
+                            <div>
+                                <p>运输中</p>
+                                <p>预计三日内到达</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="login-btn" onclick="location.href='index.html'">返回首页</button>
+                        <button class="modify-btn" onclick="location.href='order-detail.html'">查看订单</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="foot">
+            <p>© 2025 仁泽网 版权所有</p>
+        </div>
+    </div>
+
+    <script>
+        // 从URL获取订单信息
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('amount')) {
+            document.getElementById('success-amount').textContent = `我们已收到您的付款 ¥${params.get('amount')}`;
+        }
+        if (params.get('orderNo')) {
+            document.getElementById('order-no').textContent = params.get('orderNo');
+        }
+        if (params.get('product')) {
+            document.getElementById('product-name').textContent = decodeURIComponent(params.get('product'));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情 - 仁泽网</title>
+    <link rel="stylesheet" href="css/paihang.css">
+    <link rel="stylesheet" href="css/css2.css">
+    <style>
+        .qj {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bodyer {
+            flex: 1;
+            padding: 20px 0;
+            background: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 顶部样式 */
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            background: #a8dd9f;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        #dl a {
+            color: #FF4400;
+            text-decoration: none;
+        }
+
+        /* 导航条 */
+        .dht {
+            display: flex;
+            justify-content: center;
+            background: #a8dd9f;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .dht a {
+            padding: 0 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .dht a:hover {
+            color: #FF4400;
+        }
+
+        #a4 {
+            color: #FF4400;
+            font-weight: bold;
+        }
+
+        /* 页脚 */
+        .foot {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            margin-top: 30px;
+        }
+
+        /* 商品详情样式 */
+        .product-main {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-gallery {
+            flex: 1;
+            max-width: 440px;
+        }
+
+        .main-image {
+            border: 1px solid #eee;
+            padding: 13px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .main-image img {
+            width: 100%;
+            display: block;
+            border-radius: 4px;
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumbnails img {
+            width: 60px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            padding: 2px;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .thumbnails img:hover {
+            border-color: #FF4400;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product-price {
+            color: #FF4400;
+            font-size: 36px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .promotion {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+            padding: 10px;
+            background: #FFF7E6;
+            border-radius: 4px;
+        }
+
+        /* 规格选择 */
+        .selection {
+            margin: 25px 0;
+        }
+
+        .option {
+            margin-bottom: 20px;
+        }
+
+        .option label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .variant {
+            padding: 8px 20px;
+            margin: 0 10px 10px 0;
+            border: 1px solid #ddd;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .variant.active {
+            border-color: #FF4400;
+            color: #FF4400;
+            position: relative;
+        }
+
+        .variant.active::after {
+            content: "✓";
+            margin-left: 5px;
+        }
+
+        /* 数量选择 */
+        .quantity {
+            margin: 25px 0;
+        }
+
+        .quantity input {
+            width: 80px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        /* 操作按钮 */
+        .actions {
+            margin-top: 30px;
+        }
+
+        .actions button {
+            padding: 12px 30px;
+            margin-right: 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .buy-now {
+            background: #FF4400;
+            color: white;
+        }
+
+        .add-to-cart {
+            background: #FF9500;
+            color: white;
+        }
+
+        .actions button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* 商品详情 */
+        .product-detail {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-detail h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .detail-content img {
+            max-width: 100%;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        /* 用户评价 */
+        .product-reviews {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-reviews h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .review-item {
+            padding: 15px;
+            background: #f8f8f8;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .user {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .product-main {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .product-gallery {
+                max-width: 100%;
+            }
+
+            .actions button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            #ss input {
+                width: 180px;
+            }
+
+            .dht {
+                flex-wrap: wrap;
+            }
+
+            .dht a {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="qj">
+        <div class="top">
+            <div id="dl">
+                <a href="login.html">
+                    <p>登录 | 注册</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="dht">
+            <a href="index.html" id="a3">首页</a>
+            <a href="ren.html">歌手</a>
+            <a href="classes.html">分类歌单</a>
+            <a href="books.html">听书精选</a>
+            <a href="paihang.html">排行榜</a>
+            <a href="zhuanji.html">专辑</a>
+            <a href="vip.html">Vip会员</a>
+            <a href="goods.html" id="a4">商城</a>
+        </div>
+
+        <div class="bodyer">
+            <div class="container">
+                <div class="product-main">
+                    <!-- 商品图册 -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img src="https://via.placeholder.com/500x500" alt="商品主图" id="mainImage">
+                        </div>
+                    </div>
+
+                    <!-- 商品信息 -->
+                    <div class="product-info">
+                        <h1 class="product-title" id="product-title"></h1>
+                        <div class="product-price" id="product-price"></div>
+                        <div class="promotion">满199减20 • 领券再减5元</div>
+
+                        <!-- 规格选择 -->
+                        <div class="selection">
+                            <div class="option">
+                                <label>颜色选择：</label>
+                                <button class="variant active">白色</button>
+                                <button class="variant">黑色</button>
+                                <button class="variant">粉色</button>
+                            </div>
+                            <div class="option">
+                                <label>尺码选择：</label>
+                                <button class="variant">S</button>
+                                <button class="variant active">M</button>
+                                <button class="variant">L</button>
+                                <button class="variant">XL</button>
+                            </div>
+                        </div>
+
+                        <!-- 数量选择 -->
+                        <div class="quantity">
+                            <label>购买数量：</label>
+                            <input type="number" value="1" min="1" id="quantity">
+                        </div>
+
+                        <!-- 操作按钮 -->
+                        <div class="actions">
+                            <button class="buy-now" id="buy-now">立即购买</button>
+                            <button class="add-to-cart" id="add-to-cart">加入购物车</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 商品详情 -->
+                <div class="product-detail">
+                    <h2>商品详情</h2>
+                    <div class="detail-content">
+                        <p>• 我也不知道怎么样，你们用了就知道了</p>
+                    </div>
+                </div>
+
+                <!-- 用户评价 -->
+                <div class="product-reviews">
+                    <h2>用户评价（328）</h2>
+                    <div class="review-item">
+                        <div class="user">用户135***789</div>
+                        <div class="content">质量超出预期，会再次购买！</div>
+                    </div>
+                    <div class="review-item">
+                        <div class="user">用户864***202</div>
+                        <div class="content">该用户给出了五星好评</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="foot">
+            <p>© 2025 仁泽网 版权所有</p>
+        </div>
+    </div>
+
+    <script>
+        // 从URL获取商品信息
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get('product');
+        const price = params.get('price');
+        const img = params.get('img');
+
+        // 设置商品信息
+        document.getElementById('product-title').textContent = product;
+        document.getElementById('product-price').textContent = `¥${price}`;
+        document.getElementById('mainImage').src = img;
+
+        // 规格选择功能
+        document.querySelectorAll('.option').forEach(optionGroup => {
+            const variants = optionGroup.querySelectorAll('.variant');
+            variants.forEach(variant => {
+                variant.addEventListener('click', function() {
+                    // 移除同组所有激活状态
+                    variants.forEach(v => v.classList.remove('active'));
+                    // 设置当前选中
+                    this.classList.add('active');
+                });
+            });
+        });
+
+        // 数量验证
+        const quantityInput = document.getElementById('quantity');
+        quantityInput.addEventListener('change', function() {
+            if (this.value < 1 || isNaN(this.value)) {
+                this.value = 1;
+            }
+        });
+        // 加入购物车
+        document.getElementById('add-to-cart').addEventListener('click', () => {
+            const color = document.querySelector('.option:first-child .active').innerText;
+            const size = document.querySelector('.option:nth-child(2) .active').innerText;
+            const quantity = quantityInput.value;
+
+            alert(`已加入购物车：
+商品：${product}
+颜色：${color}
+尺码：${size}
+数量：${quantity}`);
+        });
+
+        // 立即购买
+        document.getElementById('buy-now').addEventListener('click', () => {
+            const color = document.querySelector('.option:first-child .active').innerText;
+            const size = document.querySelector('.option:nth-child(2) .active').innerText;
+            const quantity = quantityInput.value;
+
+            // 构造URL参数
+            const orderParams = new URLSearchParams({
+                product: product,
+                color: color,
+                size: size,
+                quantity: quantity,
+                price: price,
+                img: img
+            });
+
+            // 跳转订单确认页
+            window.location.href = `order.html?${orderParams.toString()}`;
+        });
+    </script>
+</body>
+</html>

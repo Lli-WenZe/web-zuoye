@@ -1,0 +1,278 @@
+*{
+    margin:0; 
+    padding:0;
+}
+body{
+    width: 1480px;
+    margin: 0px auto;
+    background-color: #f5f9ff;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+/* .qj 区块 */
+.qj{
+    background-color: #effbed;
+    width: 1480px;
+}
+
+/* 顶部logo与搜索栏整体布局 */
+.top{
+    height:80px;
+    background-color: #dff7dc;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.top img{
+    height: 95px;
+    width: 170px;
+    margin-top: -5px;
+}
+
+/* 搜索栏 */
+#ss {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+}
+#ss input[type="text"] {  
+    width: 400px;
+    height: 35px;
+    padding: 0 15px;  
+    font-size: 16px;  
+    border: 1px solid #ccc;  
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}  
+#ss button {  
+    width: 80px;
+    height: 37px;  
+    font-size: 16px;  
+    border: 1px solid #ccc;  
+    background-color: #4CAF50;  
+    color: white;  
+    border-radius: 0 20px 20px 0; 
+    cursor: pointer;  
+    transition: background-color 0.3s;
+}  
+#ss button:hover {  
+    background-color: #45a049;
+}
+
+/* 登录按钮 */
+#dl {
+    margin-left: auto;
+}
+#dl a{
+    width: 120px;
+    height: 35px;
+    border-radius: 20px;
+    color: white;   
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    transition: background-color 0.3s;
+}
+#dl a:hover {  
+    background-color: #45a049;
+}
+
+/* 导航条 */
+.dht{
+    background-color: #b6dab2;
+    width: 1480px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.dht a{
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    font-family: "微软雅黑";
+    display: block;
+    width: 130px;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s; 
+    margin: 0 5px;
+    border-radius: 5px;
+}
+#a3{
+    margin-left: 0;
+}
+#a4{
+    background-color: #ffccd5;
+    font-weight: bold;
+}
+.dht a:hover {  
+    background-color: #a8d8ea;  
+    transform: translateY(-3px);  
+}
+/*banner*/
+.lb{
+	width: 85%;
+	height: 400px;
+	margin-top: 70px;
+	margin-left:105px;
+	background-color: palegoldenrod;
+}
+.lunbo{
+	
+	width:100%;
+	height:400px;
+	margin:40px auto;
+	background:ghostwhite;
+}
+ul,li{
+	list-style: none;
+}
+.zz{
+	width:200px;
+	height:75px;
+	border-bottom: 1px solid black;
+	text-align: center;
+	line-height: 75px;
+}
+.wz{
+	padding:10px;
+}
+.tt{
+	width:1020px;
+	height:380px;
+}
+
+.wz,.tp{
+	float:left;
+	
+}
+.lunbo:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+/*banner*/
+
+/*每日推荐*/
+.tuij{
+	margin-top: 50px;
+	height: 450px;
+	background-color: #c4f8e0;
+}
+.tuij h2{
+	text-align: center;
+}
+
+ .tuij img{
+ 	width: 330px;
+ 	height: 280px;
+ 	margin: 25px 18px 20px;
+ 	border-radius: 15px;
+	object-fit: cover;
+ }
+ .w1{
+ 	font-size: 18px;
+ 	margin-left: 20px;
+ 	margin-top: -10px;
+ }
+/*每日推荐*/
+
+
+/*有声小说*/
+.xs{
+	
+	height: 550px;
+	/*background-color: pink;*/
+	margin-top: 30px;
+}
+.xs p{
+	font-size: 20px;
+	margin-left: 30px;
+	margin-top: 10px;
+	float: left;
+}
+.xs h1{
+	float: right;
+	margin-right: 240px;
+}
+#zuo{
+	width: 670px;
+	height: 460px;
+	background-color: #c4f8e0;
+	border-radius: 15px;
+	float: left;
+	margin-left: -110px;
+	margin-top: 50px;
+}
+#zuo img{
+	width: 250px;
+ 	height: 150px;
+ 	margin-top: 30px;
+ 	margin-left: 40px;
+ 	border-radius: 15px;
+	object-fit: cover;
+}
+#zuo p{
+	font-size: 17px;
+	margin-left: 50px;
+	;
+}
+
+#you{
+	width: 670px;
+	height: 460px;
+	background-color: #eafcef;
+	float: right;
+	margin-right: 20px;
+	margin-top: 10px;
+	font-family: Arial, sans-serif;  
+    text-align: center;  
+    border: 1px solid gainsboro;
+    
+}
+#you table {  
+    border-collapse: collapse;  
+    width: 670px;  
+    height: 460px;
+    
+}  
+  
+#a1 {  
+    border: 1px solid #ddd;  
+    padding: 10px;  
+}  
+  
+#you th {  
+    background-color: white;  
+}  
+  
+#you tr:nth-child(even) {  
+    background-color:#fcfcee;  
+}  
+  
+#you tr:hover {  
+    background-color:#cef89d;  
+}
+/*有声小说*/
+
+/*foot*/
+
+.foot{
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+/*foot*/
