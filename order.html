@@ -31,34 +31,6 @@
             margin: 0 auto;
             padding: 0 15px;
         }
-
-        /* 顶部样式 */
-        .top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: #a8dd9f;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        #ss input {
-            padding: 8px 15px;
-            border: 1px solid #FF4400;
-            border-radius: 4px;
-            width: 300px;
-        }
-
-        #ss button {
-            padding: 8px 15px;
-            background: #FF4400;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            margin-left: 5px;
-            cursor: pointer;
-        }
-
         #dl a {
             color: #FF4400;
             text-decoration: none;
@@ -68,7 +40,7 @@
         .dht {
             display: flex;
             justify-content: center;
-            background: #a8dd9f;
+            background: #b6dab2;
             padding: 15px 0;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
@@ -91,8 +63,8 @@
         /* 页脚 */
         .foot {
             text-align: center;
-            padding: 20px;
-            background: white;
+            height:40px;
+            background: black;
             margin-top: 30px;
         }
 
@@ -373,21 +345,6 @@
 </head>
 <body>
     <div class="qj">
-        <div class="top">
-            <img src="img/logo 许治珍.png" alt="仁泽网" width="120">
-            <div id="ss">
-                <form action="/search" method="get">
-                    <input type="text" name="query" placeholder="请输入搜索关键字" required>
-                    <button type="submit">搜索</button>
-                </form>
-            </div>
-            <div id="dl">
-                <a href="login.html">
-                    <p>登录 | 注册</p>
-                </a>
-            </div>
-        </div>
-
         <div class="dht">
             <a href="index.html" id="a3">首页</a>
             <a href="ren.html">歌手</a>
@@ -471,7 +428,7 @@
         </div>
 
         <div class="foot">
-            <p>© 2025 仁泽网 版权所有</p>
+            <p>© 2025 MUSIC DOG 音乐平台 | 版权信息 | 联系我们 | 隐私政策 | 用户协议</p>
         </div>
     </div>
 
@@ -479,12 +436,12 @@
         // 从URL获取订单信息
         const params = new URLSearchParams(window.location.search);
         const orderInfo = {
-            product: params.get('product') || '2023新款夏季女装时尚短袖T恤',
-            color: params.get('color') || '白色',
-            size: params.get('size') || 'M',
-            quantity: parseInt(params.get('quantity')) || 1,
-            price: parseFloat(params.get('price')) || 89.00,
-            img: params.get('img') || 'https://via.placeholder.com/80x80'
+            product: params.get('product'),
+            color: params.get('color'),
+            size: params.get('size'),
+            quantity: parseInt(params.get('quantity')),
+            price: parseFloat(params.get('price')),
+            img: params.get('img')
         };
 
         // 计算总价
